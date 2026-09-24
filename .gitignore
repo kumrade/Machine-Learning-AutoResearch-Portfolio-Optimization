@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+credentials*
+tokens*
+logs/
+research_output*/
+*.csv
+*.xlsx
+.DS_Store
+
