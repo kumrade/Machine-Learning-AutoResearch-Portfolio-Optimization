@@ -1,0 +1,122 @@
+HELM FINSERV — AUTOMATED RESEARCH REPORT
+========================================================================
+Generated: 2026-09-24 16:13 UTC
+Method: inner expanding-window validation + purged outer walk-forward
+Winner is selected only from outer out-of-sample results.
+
+WINNING CONFIGURATION
+  model                 : Random Forest
+  return_source         : Ensemble
+  risk_model            : Factor
+  objective             : CVaR
+  score                 : 0.7926666666666667
+  sharpe                : -0.5800495079201431
+  sortino               : -0.9025583039551195
+  cagr                  : -0.02813941612348969
+  max_drawdown          : -0.17065973332579365
+  avg_turnover          : 0.2411268327773596
+
+TOP MODELS
+ rank         model     rmse      mae  dir_acc        ic  top_decile  hit_ratio    score
+    1 Random Forest 0.074100 0.058874 0.475010  0.019268   -0.007109   0.497642 0.833333
+    2       XGBoost 0.079213 0.063232 0.471360  0.030767   -0.005396   0.493195 0.708333
+    3   Transformer 0.087088 0.070119 0.449624 -0.039000   -0.001613   0.500454 0.500000
+    4          LSTM 0.084796 0.068309 0.465731 -0.005973   -0.008311   0.496509 0.458333
+
+TOP COVARIANCE METHODS
+ rank      method  frobenius_error  variance_mae  windows  score
+    1   DCC-GARCH         0.000382      0.000096       26   1.00
+    2 Ledoit-Wolf         0.000399      0.000101       26   0.70
+    3        EWMA         0.000445      0.000101       26   0.60
+    4  Historical         0.000402      0.000102       26   0.45
+    5      Factor         0.000457      0.000102       26   0.25
+
+TOP PORTFOLIO COMBINATIONS
+ rank         model return_source  risk_model  objective      cagr  volatility    sharpe   sortino  max_drawdown  cvar95_daily  total_return  benchmark_total  excess_vs_benchmark  win_rate  avg_turnover  mean_concentration  convergence_rate  windows    score
+    1 Random Forest      Ensemble      Factor       CVaR -0.028139    0.143542 -0.580050 -0.902558     -0.170660      0.019670     -0.059970         0.024001            -0.083970  0.496337      0.241127            0.221196               1.0       26 0.792667
+    2 Random Forest            ML      Factor       CVaR -0.019640    0.143610 -0.519086 -0.812940     -0.164027      0.019468     -0.042066         0.024001            -0.066066  0.490842      0.304424            0.226195               1.0       26 0.788583
+    3 Random Forest          CAPM      Factor Max Sharpe -0.046325    0.143603 -0.711265 -1.116500     -0.205334      0.019504     -0.097665         0.024001            -0.121665  0.500000      0.037362            0.196374               1.0       26 0.776250
+    4       XGBoost          CAPM      Factor Max Sharpe -0.046325    0.143603 -0.711265 -1.116500     -0.205334      0.019504     -0.097665         0.024001            -0.121665  0.500000      0.037362            0.196374               1.0       26 0.776250
+    5          LSTM          CAPM      Factor Max Sharpe -0.046325    0.143603 -0.711265 -1.116500     -0.205334      0.019504     -0.097665         0.024001            -0.121665  0.500000      0.037362            0.196374               1.0       26 0.776250
+    6   Transformer          CAPM      Factor Max Sharpe -0.046325    0.143603 -0.711265 -1.116500     -0.205334      0.019504     -0.097665         0.024001            -0.121665  0.500000      0.037362            0.196374               1.0       26 0.776250
+    7 Random Forest          CAPM   DCC-GARCH Max Sharpe -0.032464    0.145503 -0.600946 -0.948058     -0.203061      0.019628     -0.069009         0.024001            -0.093009  0.501832      0.138704            0.210315               1.0       26 0.770000
+    8       XGBoost          CAPM   DCC-GARCH Max Sharpe -0.032464    0.145503 -0.600946 -0.948058     -0.203061      0.019628     -0.069009         0.024001            -0.093009  0.501832      0.138704            0.210315               1.0       26 0.770000
+    9          LSTM          CAPM   DCC-GARCH Max Sharpe -0.032464    0.145503 -0.600946 -0.948058     -0.203061      0.019628     -0.069009         0.024001            -0.093009  0.501832      0.138704            0.210315               1.0       26 0.770000
+   10   Transformer          CAPM   DCC-GARCH Max Sharpe -0.032464    0.145503 -0.600946 -0.948058     -0.203061      0.019628     -0.069009         0.024001            -0.093009  0.501832      0.138704            0.210315               1.0       26 0.770000
+   11 Random Forest      Ensemble   DCC-GARCH       CVaR -0.031390    0.143272 -0.604785 -0.950228     -0.199664      0.019528     -0.066768         0.024001            -0.090769  0.505495      0.344608            0.235842               1.0       26 0.768583
+   12 Random Forest            ML   DCC-GARCH       CVaR -0.022374    0.144135 -0.536028 -0.839052     -0.187324      0.019588     -0.047845         0.024001            -0.071845  0.501832      0.371532            0.240959               1.0       26 0.765833
+   13 Random Forest          CAPM Ledoit-Wolf Max Sharpe -0.049028    0.143854 -0.729496 -1.137772     -0.210226      0.019588     -0.103197         0.024001            -0.127197  0.498168      0.038850            0.198288               1.0       26 0.753250
+   14       XGBoost          CAPM Ledoit-Wolf Max Sharpe -0.049028    0.143854 -0.729496 -1.137772     -0.210226      0.019588     -0.103197         0.024001            -0.127197  0.498168      0.038850            0.198288               1.0       26 0.753250
+   15          LSTM          CAPM Ledoit-Wolf Max Sharpe -0.049028    0.143854 -0.729496 -1.137772     -0.210226      0.019588     -0.103197         0.024001            -0.127197  0.498168      0.038850            0.198288               1.0       26 0.753250
+   16   Transformer          CAPM Ledoit-Wolf Max Sharpe -0.049028    0.143854 -0.729496 -1.137772     -0.210226      0.019588     -0.103197         0.024001            -0.127197  0.498168      0.038850            0.198288               1.0       26 0.753250
+   17 Random Forest  Factor Model      Factor       CVaR -0.027495    0.144791 -0.569228 -0.876868     -0.183121      0.020092     -0.058618         0.024001            -0.082619  0.496337      0.185827            0.217842               1.0       26 0.752000
+   18       XGBoost  Factor Model      Factor       CVaR -0.027495    0.144791 -0.569228 -0.876868     -0.183121      0.020092     -0.058618         0.024001            -0.082619  0.496337      0.185827            0.217842               1.0       26 0.752000
+   19          LSTM  Factor Model      Factor       CVaR -0.027495    0.144791 -0.569228 -0.876868     -0.183121      0.020092     -0.058618         0.024001            -0.082619  0.496337      0.185827            0.217842               1.0       26 0.752000
+   20   Transformer  Factor Model      Factor       CVaR -0.027495    0.144791 -0.569228 -0.876868     -0.183121      0.020092     -0.058618         0.024001            -0.082619  0.496337      0.185827            0.217842               1.0       26 0.752000
+
+BEST MODEL PER STOCK
+   stock         model     rmse      mae  dir_acc       ic  top_decile  hit_ratio  score  rank_for_stock
+HDFCBANK          LSTM 0.062600 0.049770 0.542270 0.270440   -0.010036   0.614567   0.94               1
+    INFY Random Forest 0.103205 0.085343 0.445470 0.150143    0.005956   0.563063   0.43               1
+RELIANCE Random Forest 0.063891 0.050571 0.459059 0.105909    0.010118   0.533876   0.66               1
+    SBIN   Transformer 0.070411 0.056006 0.649414 0.215663    0.026690   0.590962   0.86               1
+     TCS       XGBoost 0.091687 0.079335 0.417699 0.172072   -0.017963   0.547637   0.52               1
+
+======================================================================
+  HELM FINSERV — ML Portfolio Construction System
+  Final Risk & Allocation Report — 2026-09-24 21:43
+======================================================================
+
+Data source        : angelone
+Universe           : SBIN, RELIANCE, TCS, INFY, HDFCBANK
+Return model       : Random Forest  (source: Ensemble)
+Covariance method  : Factor
+Optimizer objective: CVaR
+
+--- Model validation (time-series CV) ---
+  RMSE               : 0.0741
+  MAE                : 0.0589
+  Directional acc.   : 47.50%
+  Information coeff. : 0.019
+  Top-decile return  : -0.71%
+  Hit ratio          : 49.76%
+
+--- Expected monthly returns (final) ---
+  SBIN          2.29%   +/- 7.41%
+  RELIANCE     -0.21%   +/- 7.41%
+  TCS          -0.65%   +/- 7.41%
+  INFY         -0.69%   +/- 7.41%
+  HDFCBANK      0.28%   +/- 7.41%
+
+--- Portfolio allocation ---
+  RELIANCE     25.00%
+  TCS          22.61%
+  SBIN         18.66%
+  HDFCBANK     16.34%
+  INFY         12.39%
+  Cash          5.00%
+
+  Expected return (1m): 0.14%
+  Volatility (1m)     : 4.21%
+  Sharpe (monthly)    : -0.10
+  Concentration (HHI) : 0.190
+
+--- Monte Carlo risk (post-purchase) ---
+  Expected wealth (x)   : 1.0021
+  Worst 5% (x)          : 0.9338
+  Best 5% (x)           : 1.0735
+  VaR 95% (loss)        : 6.62%
+  CVaR 95% (loss)       : 8.22%
+  Median max drawdown   : -3.45%
+  Prob. of loss         : 49.00%
+
+--- Warnings ---
+  * Low information coefficient — forecasts weakly predictive.
+  * High probability of loss over the horizon.
+
+======================================================================
+  Educational tool. Not investment advice.
+======================================================================
+
+IMPORTANT: Research output, not investment advice. Results may be unstable;
+use live-quality data and a final untouched holdout before deployment.
