@@ -123,19 +123,6 @@ The current release passes 33 numerical checks covering data, features,
 forecasting, covariance PSD properties, optimization constraints, Monte Carlo,
 walk-forward backtesting and report generation.
 
-## Optional Angel One configuration
-
-Credentials can be entered at runtime or provided as environment variables:
-
-```text
-ANGEL_API_KEY
-ANGEL_CLIENT_ID
-ANGEL_PASSWORD
-ANGEL_TOTP_SECRET
-```
-
-Never commit credentials, screenshots containing credentials, `.env` files or
-generated access tokens.
 
 ## Interpreting the included sample
 
